@@ -1,17 +1,19 @@
+import "react-native-gesture-handler";
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./src/screens/HomeScreen";
+import SearchScreen from "./src/screens/SearchScreen";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
-
-const Stack = createNativeStackNavigator()
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
+      <Drawer.Navigator initialRouteName="Search">
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Search" component={SearchScreen} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
