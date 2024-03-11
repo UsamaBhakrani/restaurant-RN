@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 
-const Card = ({ h, w, color, title }) => {
+const Card = ({ h, w, color, title, children }) => {
   return (
     <View>
       <View
@@ -10,6 +10,7 @@ const Card = ({ h, w, color, title }) => {
         ]}
       >
         <Text style={styles.text}>{title}</Text>
+        {children}
       </View>
     </View>
   );
@@ -17,7 +18,7 @@ const Card = ({ h, w, color, title }) => {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 12,
+    borderRadius: 15,
     marginHorizontal: 10,
   },
   text: {
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     fontWeight: "500",
     textAlign: "center",
+    paddingTop: 15,
   },
 });
 
