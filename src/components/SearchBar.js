@@ -1,19 +1,18 @@
 import { StyleSheet, Text, View, TextInput } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { useState } from "react";
 
-const SearchBar = () => {
-  const [search, setSearch] = useState("");
-
+const SearchBar = ({ term, onTermChange, onSubmit }) => {
   return (
     <View style={styles.background}>
       <AntDesign style={styles.icon} name="search1" color="black" />
       <TextInput
+        value={term}
         placeholder="Search"
         style={styles.input}
         autoCapitalize="none"
         autoCorrect={false}
-        onChangeText={(e) => setSearch(e)}
+        onChangeText={onTermChange}
+        onEndEditing={onSubmit}
       />
     </View>
   );
