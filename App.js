@@ -8,6 +8,7 @@ import MedRepOrderScreen from "./src/screens/MedRepOrderScreen";
 import OrdersScreen from "./src/screens/OrdersScreen";
 import ContactScreen from "./src/screens/ContactScreen";
 import NewCustomerScreen from "./src/screens/NewCustomer";
+import UploadDocs from "./src/screens/UploadDocs";
 
 const Drawer = createDrawerNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
         <Drawer.Screen name="Orders" component={OrdersScreen} />
         <Drawer.Screen name="Contact" component={ContactScreen} />
         <Drawer.Screen name="New Customer Code" component={NewCustomerScreen} />
+        <Drawer.Screen name="Upload Documents" component={UploadDocs} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
