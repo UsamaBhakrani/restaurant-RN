@@ -7,6 +7,8 @@ import {
 } from "react-native";
 import Card from "../components/Card";
 import { AntDesign } from "@expo/vector-icons";
+import OrderTable from "../components/OrderTable";
+import ButtonList from "../components/ButtonList";
 
 const HomeScreen = ({ navigation: { navigate } }) => {
   return (
@@ -39,7 +41,15 @@ const HomeScreen = ({ navigation: { navigate } }) => {
           </TouchableOpacity>
         </View>
       </View>
-      <FlatList style={styles.flatList} />
+      <ButtonList
+        results={[
+          { id: 1, name: "Create Order" },
+          { id: 2, name: "Hello" },
+          { id: 3, name: "Hello" },
+          { id: 4, name: "Hello" },
+        ]}
+      />
+      {/* <OrderTable style={styles.flatList} /> */}
     </View>
   );
 };
@@ -75,14 +85,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     paddingTop: 80,
     paddingRight: 5,
-  },
-  flatList: {
-    borderWidth: 2,
-    marginTop: 35,
-    marginHorizontal: 10,
-    height: 350,
-    backgroundColor: "#ffffff",
-    borderRadius: 12,
   },
 });
 
