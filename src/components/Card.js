@@ -19,7 +19,7 @@ const Card = ({ h, w, color, title, children }) => {
 const styles = StyleSheet.create({
   container: {
     borderRadius: 15,
-    marginLeft: 10,
+    marginHorizontal: 5,
   },
   text: {
     fontSize: 15,
