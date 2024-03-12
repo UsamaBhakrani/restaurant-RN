@@ -5,7 +5,7 @@ import { AntDesign } from "@expo/vector-icons";
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Card w={190} h={280} color={"#05dab7"} title="Booking Summary">
+      <Card w={200} h={280} color={"#05dab7"} title="Booking Summary">
         <View style={styles.summary}>
           <Text style={styles.orderSummary}>28/30</Text>
           <Text style={styles.valueSummary}>Rs. 35906</Text>
@@ -18,10 +18,10 @@ const HomeScreen = () => {
         />
       </Card>
       <View style={styles.smallContainer}>
-        <Card w={145} h={135} color={"#1ea7f7"} title="Receive Area">
+        <Card w={140} h={135} color={"#1ea7f7"} title="Receive Area">
           <AntDesign name="arrowdown" size={36} color="white" />
         </Card>
-        <Card w={145} h={135} color={"#fb816f"} title="Send Area">
+        <Card w={140} h={135} color={"#fb816f"} title="Send Area">
           <AntDesign name="arrowup" size={36} color="white" />
         </Card>
       </View>
@@ -32,12 +32,12 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    margin: 10,
+    marginTop: 10,
+    justifyContent: "center",
   },
   smallContainer: {
     justifyContent: "space-between",
     alignItems: "center",
-    margin: 0,
   },
   summary: {
     padding: 15,
@@ -45,16 +45,17 @@ const styles = StyleSheet.create({
   valueSummary: {
     fontSize: 22,
     color: "white",
-    fontWeight: "500",
+    fontWeight: "400",
   },
   orderSummary: {
-    fontSize: 45,
+    fontSize: 35,
     color: "white",
-    fontWeight: "600",
+    fontWeight: "500",
   },
   icon: {
     alignSelf: "flex-end",
-    paddingTop: 70,
+    justifyContent: "space-around",
+    paddingTop: 80,
     paddingRight: 5,
   },
 });
