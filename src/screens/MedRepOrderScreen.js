@@ -1,8 +1,9 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
+import OrderTable from "../components/OrderTable";
 const MedRepOrderScreen = () => {
   return (
     <View>
-      <Text>MedRepOrderScreen</Text>
+      <OrderTable />
     </View>
   );
 };

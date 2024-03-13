@@ -1,43 +1,71 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 import Card from "../components/Card";
 import { AntDesign } from "@expo/vector-icons";
+import OrderTable from "../components/OrderTable";
+import ButtonList from "../components/ButtonList";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation: { navigate } }) => {
   return (
-    <View style={styles.container}>
-      <Card w={190} h={280} color={"#05dab7"} title="Booking Summary">
-        <View style={styles.summary}>
-          <Text style={styles.orderSummary}>28/30</Text>
-          <Text style={styles.valueSummary}>Rs. 35906</Text>
+    <View>
+      <View style={styles.container}>
+        <TouchableOpacity onPress={() => navigate("Orders")}>
+          <Card w={190} h={280} color={"#05dab7"} title="Booking Summary">
+            <View style={styles.summary}>
+              <Text style={styles.orderSummary}>28/30</Text>
+              <Text style={styles.valueSummary}>Rs. 35906</Text>
+            </View>
+            <AntDesign
+              name="arrowright"
+              size={40}
+              style={styles.icon}
+              color="white"
+            />
+          </Card>
+        </TouchableOpacity>
+        <View style={styles.smallContainer}>
+          <TouchableOpacity>
+            <Card w={145} h={135} color={"#1ea7f7"} title="Receive Area">
+              <AntDesign name="arrowdown" size={36} color="white" />
+            </Card>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Card w={145} h={135} color={"#fb816f"} title="Send Area">
+              <AntDesign name="arrowup" size={36} color="white" />
+            </Card>
+          </TouchableOpacity>
         </View>
-        <AntDesign
-          name="arrowright"
-          size={40}
-          style={styles.icon}
-          color="white"
-        />
-      </Card>
-      <View style={styles.smallContainer}>
-        <Card w={145} h={135} color={"#1ea7f7"} title="Receive Area">
-          <AntDesign name="arrowdown" size={36} color="white" />
-        </Card>
-        <Card w={145} h={135} color={"#fb816f"} title="Send Area">
-          <AntDesign name="arrowup" size={36} color="white" />
-        </Card>
       </View>
+      <ButtonList
+        results={[
+          { id: 1, name: "Create Order" },
+          { id: 2, name: "Hello" },
+          { id: 3, name: "Hello" },
+          { id: 4, name: "Hello" },
+        ]}
+      />
+      {/* <OrderTable style={styles.flatList} /> */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: "#f2f6f7",
+  },
   container: {
     flexDirection: "row",
-    margin: 10,
+    marginTop: 15,
+    justifyContent: "center",
   },
   smallContainer: {
     justifyContent: "space-between",
     alignItems: "center",
-    margin: 0,
   },
   summary: {
     padding: 15,
@@ -45,16 +73,17 @@ const styles = StyleSheet.create({
   valueSummary: {
     fontSize: 22,
     color: "white",
-    fontWeight: "500",
+    fontWeight: "400",
   },
   orderSummary: {
-    fontSize: 45,
+    fontSize: 35,
     color: "white",
-    fontWeight: "600",
+    fontWeight: "500",
   },
   icon: {
     alignSelf: "flex-end",
-    paddingTop: 70,
+    justifyContent: "space-around",
+    paddingTop: 80,
     paddingRight: 5,
   },
 });
